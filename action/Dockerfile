@@ -14,8 +14,6 @@ LABEL "maintainer"="Webber Takken <webber@takken.io>"
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
-RUN gradlew wrapper --gradle-version=5.3
-
 ADD default-build-script /UnityBuilderAction
 ADD steps /steps
 RUN chmod -R +x /steps
