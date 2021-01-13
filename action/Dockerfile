@@ -11,11 +11,9 @@ LABEL "homepage"="http://github.com/webbertakken/unity-actions"
 LABEL "maintainer"="Webber Takken <webber@takken.io>"
 
 # To be moved to base image
-RUN apt-get -q install -y locales && apt-get clean
+RUN apt-get -q install -y locales --fix-missing && apt-get clean
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-
-RUN gradlew wrapper --gradle-version=5.3
 
 ADD default-build-script /UnityBuilderAction
 ADD steps /steps
